@@ -1,0 +1,112 @@
+{
+	"layer":"top",
+	"modules-left":[
+	   	"hyprland/workspaces"
+	],
+	"modules-center":[
+	   	"hyprland/window"
+	],
+	"modules-right":[
+		"bluetooth",
+	   	"pulseaudio",
+		"custom/mic",
+		"backlight",
+		"custom/ip",
+		"battery",
+		"clock"
+	],
+	"hyprland/workspaces": {
+		"format": "{icon} ",
+		"tooltip": false,
+		"all-outputs": true,
+		"format-icons": {
+		  "active": "",
+		  "default": "",
+		  "busy": ""
+		},
+		"persistent-workspaces": {
+			"*": 10
+		}
+	},
+	"hyprland/window": {  
+		"format":"{title}",
+		"rewrite": {
+			"": " ʕ•ᴥ•ʔ "
+		},
+		"max-length": 50,
+		"separate-outputs": true
+	},
+	"battery":{
+	   "states":{
+		  "warning":30,
+		  "critical":15
+	   },
+	   "format":"{capacity}% {icon}",
+	   "format-charging":"{capacity}% {icon}",
+	   "format-plugged":"{capacity}% {icon}",
+	   "format-alt":"{time} {icon}",
+	   "format-full":"{capacity}% {icon}",
+	   "format-icons":[
+		  "",
+		  "",
+		  "",
+		  "",
+		  ""
+	   ]
+	},
+	"clock":{
+	   "format-alt":"{:%a, %d. %b %H:%M}",
+	   "format":"{:%H:%M}"
+	},
+	"bluetooth":{
+	   "format":"",
+	   "format-disabled":"",
+	   "format-connected":" {device_alias}",
+	   "on-click":"blueman-manager"
+	},
+	"custom/ip": {
+		"format": "{}",
+		"exec": "python3 /home/snr1s3/.config/waybar/scriptsPy/ip.py 2> /dev/null",
+		"interval": 60,
+		"on-click": "nm-connection-editor"
+	},
+	"custom/mic":{
+		"format": "{}",
+		"return-type": "text",
+		"exec": "python3 /home/snr1s3/.config/waybar/scriptsPy/micScripts/mic.py 3 2> /dev/null",
+		"interval": 1,
+		"on-scroll-up":"python3 /home/snr1s3/.config/waybar/scriptsPy/micScripts/mic.py 1 2> /dev/null",
+	   	"on-scroll-down":"python3 /home/snr1s3/.config/waybar/scriptsPy/micScripts/mic.py 2 2> /dev/null"
+	},
+	"backlight":{
+	   "device":"intel_backlight",
+	   "format":"{percent}% {icon}",
+	   "format-icons":[
+		"🌑",
+		"🌒",
+		"🌓",
+		"🌔",		
+		"🌕"
+	   ],
+	   "on-scroll-up":"exec brightnessctl set +1%",
+	   "on-scroll-down":"exec brightnessctl set 1%-"
+	},
+	"pulseaudio": {
+        "format": "{volume}% {icon}",
+        "tooltip": false,
+        "format-muted": "Muted {volume}% ",
+        "on-click": "pamixer -t",
+        "on-scroll-up": "pamixer -i 5",
+        "on-scroll-down": "pamixer -d 5",
+        "scroll-step": 5,
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        }
+    }
+}
