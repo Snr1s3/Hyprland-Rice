@@ -8,10 +8,9 @@ This is my NixOS rice, showcasing a customized and aesthetic Hyprland setup for 
 
 ![NixOS Rice Screenshot](./img/img2.png)
 
-## NixOS backup
+## NixOS configuration
 
-The `nixos/` directory contains the system configuration copied from `/etc/nixos`.
-Desktop settings copied from `~/.config` are under `nixos/config/`.
+The `nixos_config/` directory contains the system configuration copied from
+`/etc/nixos`. Desktop settings copied from `~/.config` are under `config/`.
 
-This backup intentionally excludes application profiles and account data from
-Firefox, Discord, VS Code, GitHub CLI, KeePassXC, Unity, and dconf state.
+> Note: The screenshots include local network information.
