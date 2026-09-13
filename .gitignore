@@ -1,0 +1,10 @@
+# Local secrets and runtime state
+*.swp
+*.swo
+**/hosts.yml
+**/*credentials*
+**/*secret*
+**/*token*
+**/*.pem
+**/*.key
+**/*.backup

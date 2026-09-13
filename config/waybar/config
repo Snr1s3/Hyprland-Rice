@@ -1,0 +1,71 @@
+{
+	"layer":"top",
+	"modules-left":[
+	   	"hyprland/workspaces"
+	],
+	"modules-center":[
+	   	"hyprland/window"
+	],
+	"modules-right":[
+	   	"pulseaudio",
+		"network",
+		"clock"
+	],
+	"hyprland/workspaces": {
+		"format": "<span size='18000'>{icon}</span>",
+		"tooltip": false,
+		"all-outputs": true,
+		"format-icons": {
+			"1": "󰎤",
+			"2": "󰎧",
+			"3": "󰎪",
+			"4": "󰎭",
+			"5": "󰎱",
+			"6": "󰎳",
+			"7": "󰎶",
+			"8": "󰎹",
+			"9": "󰎼",
+			"10": "󰽽"
+		},
+		"persistent-workspaces": {
+			"*": 5
+		}
+	},
+	"hyprland/window": {  
+		"format":"{title}",
+		"rewrite": {
+			"": " ʕ•ᴥ•ʔ "
+		},
+		"max-length": 50,
+		"separate-outputs": true
+	},
+	"clock":{
+	   "format-alt":"{:%a, %d. %b  %H:%M}"
+	},
+	"network": {
+        "format-wifi": "{essid} ({signalStrength}%) <span size='18000'>󰈁</span>",
+        "format-ethernet": "{ipaddr}/{cidr} <span size='18000'>󰈀</span>",
+        "tooltip-format": "{ifname} via {gwaddr} <span size='18000'>󰈀</span>",
+        "format-linked": "{ifname} (No IP) <span size='18000'>󰈀</span>",
+        "format-disconnected": "Disconnected <span size='18000'>⚠</span>",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+	"pulseaudio": {
+        "format": "{volume}% <span size='18000'>{icon} </span> {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": "󰅶 {icon} {format_source}",
+        "format-muted": "󰅶 {format_source}",
+        "format-source": "{volume}% <span size='18000'></span>",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "󰂑",
+            "headset": "󰂑",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    }
+}

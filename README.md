@@ -1,9 +1,17 @@
-# Fedora Rice
+# NixOS Rice
 
-This is my Fedora rice, showcasing a customized and aesthetic Hyprland setup for a lightweight and visually appealing Linux desktop environment.
+This is my NixOS rice, showcasing a customized and aesthetic Hyprland setup for a lightweight and visually appealing Linux desktop environment.
 
 ## Screenshot
 
-![Fedora Rice Screenshot](./img/screenshot_08-04-2025-2058.png)
+![NixOS Rice Screenshot](./img/img1.png)
 
-![Fedora Rice Screenshot](./img/screenshot_08-04-2025-2025.png)
+![NixOS Rice Screenshot](./img/img2.png)
+
+## NixOS backup
+
+The `nixos/` directory contains the system configuration copied from `/etc/nixos`.
+Desktop settings copied from `~/.config` are under `nixos/config/`.
+
+This backup intentionally excludes application profiles and account data from
+Firefox, Discord, VS Code, GitHub CLI, KeePassXC, Unity, and dconf state.
