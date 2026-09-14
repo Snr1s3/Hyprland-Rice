@@ -50,6 +50,8 @@ dconf.settings = {
     shellAliases = {
       bondia = "echo Bon Dia Alba";
       rebuild = "sudo nixos-rebuild switch --flake /etc/nixos#nixos";
+      edit_config = "sudo vim /etc/nixos/configuration.nix";
+      scan_apps = "update-desktop-database ~/.local/share/applications";
     };
 
     initExtra = ''

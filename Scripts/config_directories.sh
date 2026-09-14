@@ -1,0 +1,9 @@
+config_directories=(
+	fastfetch
+	foot
+	gtk-3.0
+	gtk-4.0
+	hypr
+	walker
+	waybar
+)

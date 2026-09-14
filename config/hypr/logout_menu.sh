@@ -1,19 +1,25 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-CHOICE=$(echo -e "Lock\nLogout\nPower Off" | tofi \
-    --prompt-text "" \
-    --width 8% \
-    --height 15% \
-    --anchor center \
-    --font "CaskaydiaMono Nerd Font 14" \
-    --horizontal=false)
+set -euo pipefail
 
-case $CHOICE in
+choice=$(printf '%s\n' "Lock" "Logout" "Reboot" "Power Off" | walker \
+    --dmenu \
+    --theme nord \
+    --placeholder "System" \
+    --width 180 \
+    --maxheight 180 \
+    --nosearch \
+    --hideqa)
+
+case "${choice}" in
     Lock)
         hyprlock
         ;;
     Logout)
         command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'
+        ;;
+    Reboot)
+        systemctl reboot
         ;;
     "Power Off")
         systemctl poweroff

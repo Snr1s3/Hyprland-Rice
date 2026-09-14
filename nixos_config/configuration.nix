@@ -124,7 +124,6 @@
   environment.systemPackages = with pkgs; [
     # Editors / development
     vim
-    geany
     vscode
     git
     gh
@@ -132,23 +131,23 @@
 
     # Terminal / shell
     foot
-    lf
     fastfetch
     wget
     unzip
 
     # Hyprland / Wayland
     waybar
-    tofi
     hyprpaper
     hyprlock
     hyprcursor
     swappy
     slurp
     grim
+    elephant
+    walker
 
     # Desktop / files
-    nautilus
+    thunar
     gvfs
     udiskie
     desktop-file-utils

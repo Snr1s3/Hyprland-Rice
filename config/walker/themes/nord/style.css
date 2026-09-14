@@ -1,0 +1,118 @@
+@define-color window_bg_color #2E3440;
+@define-color panel_bg_color #3B4252;
+@define-color accent_bg_color #5E81AC;
+@define-color accent_fg_color #ECEFF4;
+@define-color theme_fg_color #ECEFF4;
+@define-color muted_fg_color #D8DEE9;
+@define-color cyan #88C0D0;
+@define-color yellow #EBCB8B;
+@define-color error_bg_color #BF616A;
+@define-color error_fg_color #2E3440;
+
+* {
+  all: unset;
+}
+
+popover {
+  background: @panel_bg_color;
+  border: 1px solid @accent_bg_color;
+  border-radius: 10px;
+  padding: 8px;
+}
+
+scrollbar {
+  opacity: 0;
+}
+
+.box-wrapper {
+  background: @window_bg_color;
+  border: 2px solid @accent_bg_color;
+  border-radius: 10px;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.35);
+  min-width: 180px;
+  max-width: 180px;
+  padding: 12px;
+}
+
+.preview-box,
+.elephant-hint,
+.placeholder,
+.list {
+  color: @theme_fg_color;
+}
+
+.search-container {
+  background: @panel_bg_color;
+  border-radius: 6px;
+}
+
+.input {
+  background: @panel_bg_color;
+  caret-color: @cyan;
+  color: @theme_fg_color;
+  padding: 8px 10px;
+}
+
+.input placeholder {
+  color: @muted_fg_color;
+  opacity: 0.7;
+}
+
+.input selection {
+  background: @accent_bg_color;
+  color: @accent_fg_color;
+}
+
+.item-box {
+  border-radius: 6px;
+  padding: 8px 10px;
+}
+
+child:selected .item-box,
+row:selected .item-box {
+  background: @accent_bg_color;
+  color: @accent_fg_color;
+}
+
+.item-subtext {
+  color: @muted_fg_color;
+  font-size: 12px;
+  opacity: 0.75;
+}
+
+.item-quick-activation {
+  background: alpha(@cyan, 0.2);
+  border-radius: 4px;
+  color: @cyan;
+  padding: 8px;
+}
+
+.keybinds {
+  border-top: 1px solid @panel_bg_color;
+  color: @muted_fg_color;
+  font-size: 12px;
+  padding-top: 10px;
+}
+
+.keybind-label {
+  border: 1px solid @cyan;
+  border-radius: 4px;
+  color: @cyan;
+  padding: 2px 4px;
+}
+
+.error {
+  background: @error_bg_color;
+  color: @error_fg_color;
+  padding: 10px;
+}
+
+.todo.active {
+  color: @yellow;
+  font-weight: bold;
+}
+
+.todo.done .item-text-box,
+.bluetooth.disconnected {
+  opacity: 0.35;
+}
