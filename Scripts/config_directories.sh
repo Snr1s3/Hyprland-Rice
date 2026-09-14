@@ -1,4 +1,5 @@
 config_directories=(
+	elephant
 	fastfetch
 	foot
 	gtk-3.0
