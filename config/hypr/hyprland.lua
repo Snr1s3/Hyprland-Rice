@@ -42,8 +42,8 @@ hl.monitor({
 
 -- Set programs that you use
 local terminal    = "foot"
-local fileManager = "foot lf"
-local menu        = "tofi-drun --drun-launch=true"
+local fileManager = "thunar"
+local menu        = "elephant & walker"
 
 
 -------------------
@@ -55,8 +55,12 @@ local menu        = "tofi-drun --drun-launch=true"
 -- Autostart necessary processes (like notifications daemons, status bars, etc.)
 -- Or execute your favorite apps at launch like this:
 --
-hl.on("hyprland.start", function () 
-   hl.exec_cmd("waybar & hyprpaper & firefox")
+hl.on("hyprland.start", function ()
+    hl.exec_cmd("waybar")
+    hl.exec_cmd("hyprpaper")
+    hl.exec_cmd("firefox")
+    hl.exec_cmd("elephant")
+    hl.exec_cmd("walker --gapplication-service")
 end)
 
 

@@ -1,34 +1,111 @@
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "source": "~/.config/fastfetch/ascii.art",
+    "type": "file",
+  },
+  "display": {
+    "separator": " ➜  "
+  },
   "modules": [
-    "title",
-    "separator",
-    "os",
-    "host",
-    "kernel",
-    "uptime",
-    "packages",
-    "shell",
- //   "display",
-    "de",
-    "wm",
-   // "wmtheme",
-   // "theme",
-   // "icons",
-   // "font",
-//    "cursor",
-  //  "terminal",
-  //  "terminalfont",
-    "cpu",
-    "gpu",
-    "memory",
-//    "swap",
-//    "disk",
-    "localip",
-  //  "battery",
-  //  "poweradapter",
-//    "locale",
     "break",
-    "colors"
+    "break",
+    "break",
+
+    {
+      "type": "os",
+      "key": "OS   ",
+      "keyColor": "31"
+    },
+    {
+      "type": "kernel",
+      "key": " ├  ",
+      "keyColor": "31"
+    },
+    {
+      "type": "command",
+      "key": " ├ 󰅨 ",
+      "keyColor": "31",
+      "text": "birth=$(stat -c %W /var/lib/nixos 2>/dev/null); now=$(date +%s); if [ \"$birth\" -gt 0 ]; then echo \"$(( (now - birth) / 86400 )) days\"; else echo \"unknown\"; fi"
+    },
+    {
+      "type": "packages",
+      "key": " ├ 󰏖 ",
+      "keyColor": "31"
+    },
+    {
+      "type": "shell",
+      "key": " └  ",
+      "keyColor": "31"
+    },
+
+    "break",
+
+    {
+      "type": "wm",
+      "key": "WM   ",
+      "keyColor": "32"
+    },
+    {
+      "type": "wmtheme",
+      "key": " ├ 󰉼 ",
+      "keyColor": "32"
+    },
+    {
+      "type": "icons",
+      "key": " ├ 󰀻 ",
+      "keyColor": "32"
+    },
+    {
+      "type": "cursor",
+      "key": " ├  ",
+      "keyColor": "32"
+    },
+    {
+      "type": "terminal",
+      "key": " ├  ",
+      "keyColor": "32"
+    },
+    {
+      "type": "terminalfont",
+      "key": " └  ",
+      "keyColor": "32"
+    },
+
+    "break",
+
+    {
+      "type": "host",
+      "key": "PC   ",
+      "keyColor": "33"
+    },
+    {
+      "type": "cpu",
+      "key": " ├  ",
+      "keyColor": "33"
+    },
+    {
+      "type": "gpu",
+      "key": " ├ 󰢮 ",
+      "keyColor": "33"
+    },
+    {
+      "type": "memory",
+      "key": " ├  ",
+      "keyColor": "33"
+    },
+    {
+      "type": "disk",
+      "key": " ├ 󰋊 ",
+      "keyColor": "33"
+    },
+    {
+      "type": "monitor",
+      "key": " └  ",
+      "keyColor": "33"
+    },
+
+    "break",
+    "break"
   ]
 }
