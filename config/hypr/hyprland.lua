@@ -100,9 +100,9 @@ hl.env("ADW_DISABLE_PORTAL", "1")
 hl.config({
     general = {
         gaps_in  = 5,
-        gaps_out = 20,
+        gaps_out = 5,
 
-        border_size = 2,
+        border_size = 1,
 
         col = {
             active_border = {
@@ -126,7 +126,7 @@ hl.config({
     },
 
     decoration = {
-        rounding       = 10,
+        rounding       = 0,
         rounding_power = 2,
 
         -- Change transparency of focused and unfocused windows

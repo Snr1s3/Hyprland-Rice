@@ -5,6 +5,21 @@ import QtQuick.Controls
 import QtQuick.Layouts
 
 ShellRoot {
+
+    // Waybar-style workspace icons
+    property var workspaceIcons: [
+        "󰎤",
+        "󰎧",
+        "󰎪",
+        "󰎭",
+        "󰎱",
+        "󰎳",
+        "󰎶",
+        "󰎹",
+        "󰎼",
+        "󰽽"
+    ]
+
     Variants {
         model: Quickshell.screens
 
@@ -30,7 +45,10 @@ ShellRoot {
 
                 spacing: 8
 
+                // ─────────────────────────────
                 // Workspaces
+                // ─────────────────────────────
+
                 Row {
                     spacing: 4
 
@@ -50,9 +68,10 @@ ShellRoot {
                             Text {
                                 anchors.centerIn: parent
 
-                                text: index + 1
+                                text: workspaceIcons[index]
+
                                 color: "white"
-                                font.pixelSize: 13
+                                font.pixelSize: 18
                             }
 
                             MouseArea {
@@ -71,43 +90,64 @@ ShellRoot {
                     }
                 }
 
+                // Push everything after workspaces toward center/right
                 Item {
                     Layout.fillWidth: true
                 }
 
+                // ─────────────────────────────
                 // Window title
+                // ─────────────────────────────
+
                 Text {
                     text: "Quickshell"
+
                     color: "white"
+
                     elide: Text.ElideRight
 
                     Layout.maximumWidth: 400
                 }
 
+                // Push right-side modules to the right
                 Item {
                     Layout.fillWidth: true
                 }
 
+                // ─────────────────────────────
                 // Volume
+                // ─────────────────────────────
+
                 Text {
                     text: "󰕾"
+
                     color: "white"
+
                     font.pixelSize: 16
                 }
 
                 Text {
                     text: "Volume"
+
                     color: "white"
                 }
 
+                // ─────────────────────────────
                 // Network
+                // ─────────────────────────────
+
                 Text {
                     text: "󰤨"
+
                     color: "white"
+
                     font.pixelSize: 16
                 }
 
+                // ─────────────────────────────
                 // Clock
+                // ─────────────────────────────
+
                 Text {
                     text: Qt.formatDateTime(
                         new Date(),
