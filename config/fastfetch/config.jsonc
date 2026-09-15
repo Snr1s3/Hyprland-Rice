@@ -1,20 +1,16 @@
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
-  "logo": {
-    "source": "~/.config/fastfetch/ascii.art",
-    "type": "file",
-  },
   "display": {
     "separator": " ➜  "
   },
   "modules": [
-    "break",
-    "break",
-    "break",
-
+    {
+      "type": "logo",
+      "small": true
+    },
     {
       "type": "os",
-      "key": "OS   ",
+      "key": "OS",
       "keyColor": "31"
     },
     {
@@ -43,7 +39,7 @@
 
     {
       "type": "wm",
-      "key": "WM   ",
+      "key": "WM",
       "keyColor": "32"
     },
     {
@@ -75,9 +71,10 @@
     "break",
 
     {
-      "type": "host",
-      "key": "PC   ",
-      "keyColor": "33"
+      "type": "command",
+      "key": "PC",
+      "keyColor": "33",
+      "text": "hostname"
     },
     {
       "type": "cpu",
