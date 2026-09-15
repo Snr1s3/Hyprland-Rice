@@ -196,6 +196,16 @@
     XCURSOR_THEME = "Bibata-Modern-Ice";
     XCURSOR_SIZE = "24";
   };
+  environment.etc."xdg/applications/overskride.desktop".text = ''
+    [Desktop Entry]
+    Type=Application
+    Name=Overskride
+    Comment=Bluetooth manager
+    Exec=overskride
+    Icon=overskride
+    Terminal=false
+    Categories=GTK;Settings;HardwareSettings;
+  '';
 
   # ============================================================================
   # Gaming
