@@ -28,7 +28,7 @@
   # ============================================================================
 
   networking = {
-    hostName = "nixos";
+    hostName = "BonDia";
 
     networkmanager.enable = true;
     wireless.enable = true;
@@ -139,6 +139,7 @@
     # Terminal / shell
     foot
     fastfetch
+    fetch
     wget
     unzip
 
