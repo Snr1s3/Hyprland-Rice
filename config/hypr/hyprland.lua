@@ -57,7 +57,7 @@ local lock        = "hyprlock"
 -- Or execute your favorite apps at launch like this:
 --
 hl.on("hyprland.start", function ()
-    hl.exec_cmd("waybar")
+    hl.exec_cmd("quickshell -c ~/.config/quickshell/bar")
     hl.exec_cmd("hyprpaper")
     hl.exec_cmd("firefox")
     hl.exec_cmd("elephant")

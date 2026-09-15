@@ -6,5 +6,5 @@ config_directories=(
 	gtk-4.0
 	hypr
 	walker
-	waybar
+	quickshell
 )

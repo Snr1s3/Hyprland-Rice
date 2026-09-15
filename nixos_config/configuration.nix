@@ -154,6 +154,7 @@
     elephant
     walker
     overskride
+    quickshell
 
     # Desktop / files
     thunar
