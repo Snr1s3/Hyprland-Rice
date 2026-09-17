@@ -168,7 +168,6 @@ hl.device({
 
 local mainMod = "SUPER" 
 
-hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal))
 local closeWindowBind = hl.bind(mainMod .. " + C", hl.dsp.window.close())
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("bash ~/.config/hypr/logout_menu.sh"))
