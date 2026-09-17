@@ -38,8 +38,10 @@
   # Bluetooth
   # ============================================================================
 
-  hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = true;
+  hardware.bluetooth.enable = true; 
+  hardware.bluetooth.powerOnBoot = true; 
+  services.blueman.enable = true; 
+
 
   # ============================================================================
   # Locale / Time
@@ -140,7 +142,7 @@
     git
     gh
     unityhub
-
+    
     # Terminal / shell
     foot
     fastfetch
