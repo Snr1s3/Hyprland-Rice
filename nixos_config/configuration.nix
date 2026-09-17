@@ -167,6 +167,7 @@
     # Audio / graphics
     pavucontrol
     mesa-demos
+    playerctl
 
     # Browsers / communication
     firefox

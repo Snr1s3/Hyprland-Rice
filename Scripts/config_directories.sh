@@ -7,4 +7,5 @@ config_directories=(
 	hypr
 	walker
 	quickshell
+	swappy
 )
