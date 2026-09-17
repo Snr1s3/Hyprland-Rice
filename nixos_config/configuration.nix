@@ -89,7 +89,7 @@
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
-    withUWSM = false;
+    withUWSM = true;
   };
 
   services.xserver = {
@@ -108,8 +108,14 @@
     theme = "breeze";
   };
 
-  xdg.portal.enable = true;
-
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-hyprland
+      pkgs.xdg-desktop-portal-hyprland
+      xdg-desktop-portal-gtk
+    ];
+  };
   # ============================================================================
   # NVIDIA
   # ============================================================================
@@ -130,7 +136,6 @@
 
   environment.systemPackages = with pkgs; [
     # Editors / development
-    vim
     vscode
     git
     gh

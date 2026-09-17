@@ -275,7 +275,7 @@ end
 
 -- Example special workspace (scratchpad)
 hl.bind(mainMod .. " + SHIFT + S",
-    hl.dsp.exec_cmd("grim -g \"$(slurp)\" \"$HOME/Pictures/Screenshots/%Y%m%d-%H%M%S.png\""))
+    hl.dsp.exec_cmd("bash -c 'mkdir -p \"$HOME/Pictures/Screenshots\" && grim -g \"$(slurp)\" \"$HOME/Pictures/Screenshots/$(date +%Y%m%d-%H%M%S).png\"'"))
 -- hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("grim -g \"$(slurp)\" - | swappy -f -"))
 
 -- Scroll through existing workspaces with mainMod + scroll
