@@ -72,7 +72,8 @@ Scope {
         try {
           const devices = JSON.parse(text);
           if (!devices.keyboards || devices.keyboards.length === 0) return;
-          const keymap = devices.keyboards[0].active_keymap || "US";
+          const keyboard = devices.keyboards.find(device => device.main) || devices.keyboards[0];
+          const keymap = keyboard.active_keymap || "US";
           root.keyboardLayout = keymap.includes("Catalan") ? "CAT" :
             keymap.includes("English") ? "US" : keymap;
         } catch (error) {
@@ -412,7 +413,7 @@ Scope {
                 const sink = Pipewire.defaultAudioSink;
                 if (!sink || !sink.audio) return;
                 const delta = wheel.angleDelta.y > 0 ? 0.05 : -0.05;
-                sink.audio.volume = Math.max(0, Math.min(1.5, sink.audio.volume + delta));
+                sink.audio.volume = Math.max(0, Math.min(1.0, sink.audio.volume + delta));
               }
             }
           }
