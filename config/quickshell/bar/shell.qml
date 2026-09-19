@@ -61,6 +61,18 @@ Scope {
     running: false
   }
 
+  Process {
+    id: pavucontrolProc
+    command: ["pavucontrol"]
+    running: false
+  }
+
+  Process {
+    id: bluemanProc
+    command: ["blueman-manager"]
+    running: false
+  }
+
   property string keyboardLayout: "US"
 
   Process {
@@ -405,16 +417,52 @@ Scope {
               anchors.fill: parent
               cursorShape: Qt.PointingHandCursor
               acceptedButtons: Qt.LeftButton
-              onClicked: {
-                const sink = Pipewire.defaultAudioSink;
-                if (sink && sink.audio) sink.audio.muted = !sink.audio.muted;
-              }
+              onClicked: pavucontrolProc.running = true
               onWheel: (wheel) => {
                 const sink = Pipewire.defaultAudioSink;
                 if (!sink || !sink.audio) return;
                 const delta = wheel.angleDelta.y > 0 ? 0.05 : -0.05;
                 sink.audio.volume = Math.max(0, Math.min(1.0, sink.audio.volume + delta));
               }
+            }
+          }
+
+          // Bluetooth
+          Rectangle {
+            height: 24
+            width: bluetoothContent.width + 12
+            radius: 12
+            color: root.theme.bgSurface
+
+            Accessible.role: Accessible.Button
+            Accessible.name: "Bluetooth"
+
+            Row {
+              id: bluetoothContent
+              anchors.centerIn: parent
+              spacing: 6
+
+              Text {
+                anchors.verticalCenter: parent.verticalCenter
+                text: "󰂯"
+                color: root.theme.accentCyan
+                font.pixelSize: 14
+                font.family: root.font
+              }
+
+              Text {
+                anchors.verticalCenter: parent.verticalCenter
+                text: ""
+                color: root.theme.textPrimary
+                font.pixelSize: 11
+                font.family: root.font
+              }
+            }
+
+            MouseArea {
+              anchors.fill: parent
+              cursorShape: Qt.PointingHandCursor
+              onClicked: bluemanProc.running = true
             }
           }
 
