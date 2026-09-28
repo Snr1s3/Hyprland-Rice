@@ -6,6 +6,7 @@
     description = "Alba";
     extraGroups = [
       "networkmanager"
+      "docker"
       "wheel"
     ];
   };

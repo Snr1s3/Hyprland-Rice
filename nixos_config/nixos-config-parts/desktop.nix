@@ -10,6 +10,9 @@
   services.xserver = {
     enable = true;
     videoDrivers = [ "nvidia" ];
+    displayManager.sessionCommands = ''
+      ${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1 &
+    '';
 
     xkb = {
       layout = "us";

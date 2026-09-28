@@ -36,7 +36,7 @@ The backup and install scripts use `rsync`. The NixOS configuration sync uses
 apply them with:
 
 ```bash
-sudo nixos-rebuild switch --flake ./nixos_config#nixos
+sudo nixos-rebuild switch --flake ./nixos_config#BonDia
 ```
 
 > Note: The screenshots include local network information.

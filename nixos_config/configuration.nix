@@ -3,20 +3,19 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./config-parts/map-disks.nix
-    ./config-parts/boot.nix
-    ./config-parts/networking.nix
-    ./config-parts/bluetooth.nix
-    ./config-parts/locale.nix
-    ./config-parts/security.nix
-    ./config-parts/user.nix
-    ./config-parts/desktop.nix
-    ./config-parts/nvidia.nix
-    ./config-parts/packages.nix
-    ./config-parts/services.nix
-    ./config-parts/gaming.nix
-    ./config-parts/nix.nix
-    ./config-parts/overlays.nix
+    ./nixos-config-parts/boot.nix
+    ./nixos-config-parts/networking.nix
+    ./nixos-config-parts/bluetooth.nix
+    ./nixos-config-parts/locale.nix
+    ./nixos-config-parts/security.nix
+    ./nixos-config-parts/user.nix
+    ./nixos-config-parts/desktop.nix
+    ./nixos-config-parts/nvidia.nix
+    ./nixos-config-parts/packages.nix
+    ./nixos-config-parts/services.nix
+    ./nixos-config-parts/gaming.nix
+    ./nixos-config-parts/nix.nix
+    ./nixos-config-parts/overlays.nix
   ];
 
   # ============================================================================

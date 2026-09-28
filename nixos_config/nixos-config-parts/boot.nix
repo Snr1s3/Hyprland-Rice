@@ -1,17 +1,13 @@
-{ ... }:
+{ config, pkgs, inputs, ... }:
 
 {
-	boot.loader.systemd-boot = {
-        enable = true;
-        configurationLimit = 3;
+  boot.loader.grub = {
+    enable = true;
+    device = "nodev";
+    efiSupport = true;
+    useOSProber = true;
+    theme = inputs.nixos-grub-themes.packages.${pkgs.stdenv.hostPlatform.system}.fallout;
+  };
 
-        extraEntries = {
-        "windows.conf" = ''
-            title Windows
-            efi /EFI/Microsoft/Boot/bootmgfw.efi
-        '';
-        };
-    };
-
-    boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 }

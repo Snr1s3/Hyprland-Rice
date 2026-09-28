@@ -8,3 +8,5 @@
 **/*.pem
 **/*.key
 **/*.backup
+*/data
+mc-server/*

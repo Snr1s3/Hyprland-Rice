@@ -2,58 +2,76 @@
 
 {
   environment.systemPackages = with pkgs; [
-    # Editors / development
-    vscode
-    git
+    # Development / editors
+    docker
     gh
+    git
     unityhub
+    vscode
 
-    # Terminal / shell
-    foot
+    # Terminal / shell / utilities
     fastfetch
     fetch
-    wget
+    foot
     unzip
+    wget
 
-    # Hyprland / Wayland
-    waybar
-    hyprpaper
-    hyprlock
-    hyprcursor
-    swappy
-    slurp
-    grim
+    # Hyprland / Wayland / desktop
     elephant
-    walker
+    grim
+    hyprcursor
+    hyprland
+    hyprlock
+    hyprpaper
+    loupe
     quickshell
+    showtime
+    slurp
+    swappy
+    walker
+    waybar
 
-    # Desktop / files
-    thunar
-    gvfs
-    udiskie
+    # Desktop / files / storage
     desktop-file-utils
-    tumbler
     glib
+    gvfs
+    prismlauncher
+    rpi-imager
+    thunar
+    thunar-archive-plugin
+    thunar-volman
+    tumbler
+    udiskie
 
     # Audio / graphics
-    pavucontrol
     mesa-demos
+    pavucontrol
     playerctl
 
     # Browsers / communication
-    firefox
     discord
+    firefox
 
     # Fonts / cursors
     bibata-cursors
 
     # Filesystems / EFI
-    ntfs3g
     efibootmgr
+    ntfs3g
 
-    # Authentication
+    # Authentication / system security
     polkit_gnome
   ];
+
+  programs.thunar = {
+    enable = true;
+    plugins = with pkgs; [
+      thunar-volman
+      thunar-archive-plugin
+    ];
+  };
+
+  programs.xfconf.enable = true;
 
   fonts = {
     fontconfig.enable = true;

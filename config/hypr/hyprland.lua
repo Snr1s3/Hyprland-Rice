@@ -9,10 +9,15 @@ hl.monitor({
     scale    = "1",
 })
 hl.monitor({
-    output = "DP-1",
+    output = "DP-1", 
     mode = "1920x1080@180",
     position = "0x0",
-    scale    = "1",
+    scale = 1,
+    bitdepth = 10,
+    cm = "hdr", 
+    sdrbrightness = 1.0,
+    sdrsaturation = 1.0, 
+    sdr_max_luminance = 200,
 })
 
 ---------------------
