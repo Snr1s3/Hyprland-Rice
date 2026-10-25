@@ -1,3 +1,0 @@
-# Keep the application launcher ordered by application name instead of launch history.
-history = false
-history_when_empty = false
