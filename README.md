@@ -4,8 +4,6 @@ A personal NixOS configuration for a lightweight Hyprland desktop. It includes
 system modules, Home Manager settings, and a small collection of application
 configurations managed from one flake.
 
-![NixOS Rice screenshot](./img/img1.png)
-![NixOS Rice screenshot](./img/img2.png)
 
 ## What's included
 
