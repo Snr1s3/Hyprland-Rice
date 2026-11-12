@@ -18,12 +18,16 @@
     python3Packages.deemix
     # Hyprland / Wayland / desktop
     elephant
+    flameshot
     grim
     hyprcursor
     appimage-run
+    brightnessctl
     hyprland
     hyprlock
     hyprpaper
+    jq
+    amberol
     loupe
     quickshell
     showtime
@@ -31,6 +35,7 @@
     swappy
     walker
     waybar
+    wl-clipboard
 
     # Desktop / files / storage
     desktop-file-utils

@@ -303,14 +303,17 @@ Scope {
 
         // Center section: Window Title (truly centered in bar)
         Item {
+          id: titleSection
           anchors.centerIn: parent
-          height: parent.height
+          anchors.verticalCenter: undefined
+          anchors.top: parent.top
+          height: 32
           width: Math.max(80, parent.width - 2 * Math.max(leftSection.width, rightSection.width) - 32)
 
           Text {
             Accessible.role: Accessible.StaticText
             Accessible.name: "Active window: " + text
-            text: Hyprland.activeToplevel ? Hyprland.activeToplevel.title : ""
+            text: Hyprland.activeToplevel?.title || "\\('-')/"
             color: root.theme.textPrimary
             font.pixelSize: 13
             font.family: root.font
@@ -319,6 +322,7 @@ Scope {
             width: parent.width
             anchors.centerIn: parent
           }
+
         }
 
         // Right section: System Info + System Tray
@@ -520,7 +524,7 @@ Scope {
             visible: SystemInfo.isLaptop
 
             Accessible.role: Accessible.StaticText
-            Accessible.name: "Battery: " + SystemInfo.batteryLevel
+            Accessible.name: "Battery: " + SystemInfo.batteryLevel + ", " + SystemInfo.batteryStatus
 
             Row {
               id: batteryContent
@@ -539,6 +543,15 @@ Scope {
                 anchors.verticalCenter: parent.verticalCenter
                 text: SystemInfo.batteryLevel
                 color: root.theme.textPrimary
+                font.pixelSize: 11
+                font.family: root.font
+              }
+
+              Text {
+                visible: SystemInfo.batteryCharging
+                anchors.verticalCenter: parent.verticalCenter
+                text: "Charging"
+                color: root.theme.accentGreen
                 font.pixelSize: 11
                 font.family: root.font
               }
@@ -685,5 +698,6 @@ Scope {
         }
       }
     }
+
   }
 }
