@@ -534,7 +534,12 @@ Scope {
               Text {
                 anchors.verticalCenter: parent.verticalCenter
                 text: SystemInfo.batteryIcon
-                color: sysInfo.batteryColor
+                color: {
+                  if (SystemInfo.batteryCharging) return root.theme.accentGreen;
+                  if (SystemInfo.batteryLevelRaw > 20) return root.theme.batteryGood;
+                  if (SystemInfo.batteryLevelRaw > 10) return root.theme.batteryWarning;
+                  return root.theme.batteryCritical;
+                }
                 font.pixelSize: 14
                 font.family: root.font
               }

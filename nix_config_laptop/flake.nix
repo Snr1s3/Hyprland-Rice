@@ -23,14 +23,12 @@
           inherit inputs;
           hostName = "BonDia";
           userName = "alba";
-          videoDriver = "nvidia";
+          videoDriver = null;
         };
 
         modules = [
           ./configuration.nix
           ./hardware-configuration.nix
-          ./nixos-config-parts/map-disks.nix
-          ./nixos-config-parts/nvidia.nix
           home-manager.nixosModules.home-manager
 
           {
