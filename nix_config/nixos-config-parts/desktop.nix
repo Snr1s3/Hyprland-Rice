@@ -9,7 +9,7 @@
 
   services.xserver = {
     enable = true;
-    videoDrivers = [ "nvidia" ];
+#    videoDrivers = [ "nvidia" ];
     displayManager.sessionCommands = ''
       ${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1 &
     '';
