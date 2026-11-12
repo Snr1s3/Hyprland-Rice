@@ -15,11 +15,12 @@
     foot
     unzip
     wget
-
+    python3Packages.deemix
     # Hyprland / Wayland / desktop
     elephant
     grim
     hyprcursor
+    appimage-run
     hyprland
     hyprlock
     hyprpaper

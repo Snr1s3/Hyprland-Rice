@@ -1,0 +1,9 @@
+# AUR packages used by the default Hyprland config
+walker
+elephant
+
+# Optional packages from the original Nix configuration
+# unityhub
+# deemix
+# appimagelauncher
+# rpi-imager

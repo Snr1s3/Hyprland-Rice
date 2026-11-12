@@ -4,6 +4,24 @@ A personal NixOS configuration for a lightweight Hyprland desktop. It includes
 system modules, Home Manager settings, and a small collection of application
 configurations managed from one flake.
 
+## Arch Linux
+
+The application configs are portable to Arch Linux. The Arch bootstrap installs
+the equivalent system packages and services, then links the existing configs
+into `~/.config`:
+
+```bash
+./arch/install.sh
+```
+
+Run it from an Arch installation with an NVIDIA GPU and a normal user account.
+It uses `pacman`, enables NetworkManager, Bluetooth, Docker, SDDM, and SSH, and
+adds the user to the `docker` group. Existing config files are moved aside with
+an `arch-backup` timestamp before links are created. If `paru` is installed,
+the required `walker` and `elephant` AUR packages are installed as well;
+otherwise install the entries in `arch/aur-packages.txt` manually. Remove
+`nvidia-open` if the machine uses different graphics hardware.
+
 ![NixOS Rice screenshot](./img/img1.png)
 ![NixOS Rice screenshot](./img/img2.png)
 
