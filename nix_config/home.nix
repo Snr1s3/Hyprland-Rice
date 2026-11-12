@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, hostName, pkgs, userName, ... }:
 
 {
   # ============================================================================
@@ -6,8 +6,8 @@
   # ============================================================================
 
   home = {
-    username = "alba";
-    homeDirectory = "/home/alba";
+    username = userName;
+    homeDirectory = "/home/${userName}";
     stateVersion = "26.05";
   };
 
@@ -60,7 +60,7 @@ dconf.settings = {
 
     shellAliases = {
       bondia = "echo Bon Dia Alba";
-      rebuild = "sudo nixos-rebuild switch --flake /etc/nixos#nixos";
+      rebuild = "sudo nixos-rebuild switch --flake /etc/nixos#${hostName}";
       edit_config = "sudo nano /etc/nixos/configuration.nix";
       scan_apps = "update-desktop-database ~/.local/share/applications";
     };

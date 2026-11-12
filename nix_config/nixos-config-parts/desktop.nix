@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, videoDriver, ... }:
 
 {
   programs.hyprland = {
@@ -9,7 +9,7 @@
 
   services.xserver = {
     enable = true;
-    videoDrivers = [ "nvidia" ];
+    videoDrivers = pkgs.lib.optional (videoDriver != null) videoDriver;
     displayManager.sessionCommands = ''
       ${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1 &
     '';

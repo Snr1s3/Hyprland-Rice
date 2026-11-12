@@ -1,7 +1,7 @@
-{ ... }:
+{ userName, ... }:
 
 {
-  users.users.alba = {
+  users.users.${userName} = {
     isNormalUser = true;
     description = "Alba";
     extraGroups = [
