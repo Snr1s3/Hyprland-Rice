@@ -15,26 +15,40 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, ... }: {
-    nixosConfigurations.BonDia = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = { inherit inputs; };
+  outputs = inputs@{ nixpkgs, home-manager, ... }:
+    let
+      mkHost = { hostName, userName, videoDriver ? null, hostModules }:
+        nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = { inherit inputs hostName userName videoDriver; };
 
-      modules = [
-        ./configuration.nix
+          modules = hostModules ++ [
+            home-manager.nixosModules.home-manager
 
-        home-manager.nixosModules.home-manager
+            {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                extraSpecialArgs = { inherit hostName userName; };
 
-        {
-          home-manager = {
-            useGlobalPkgs = true;
-            useUserPackages = true;
-
-            users.alba = import ./home.nix;
-            backupFileExtension = "backup";
-          };
-        }
-      ];
+                users.${userName} = import ./home.nix;
+                backupFileExtension = "backup";
+              };
+            }
+          ];
+        };
+    in
+    {
+      nixosConfigurations.BonDia = mkHost {
+        hostName = "BonDia";
+        userName = "alba";
+        videoDriver = "nvidia";
+        hostModules = [
+          ./configuration.nix
+          ./hardware-configuration.nix
+          ./nixos-config-parts/map-disks.nix
+          ./nixos-config-parts/nvidia.nix
+        ];
+      };
     };
-  };
 }
