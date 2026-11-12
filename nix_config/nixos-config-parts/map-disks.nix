@@ -1,6 +1,6 @@
-{ ... }:
+{ lib, hostName ? null, ... }:
 
-{
+lib.mkIf (hostName == "BonDia") {
   fileSystems."/mnt/Games" = {
     device = "/dev/disk/by-uuid/88A43A08A439F8F0";
     fsType = "ntfs";
