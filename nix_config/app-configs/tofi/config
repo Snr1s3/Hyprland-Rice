@@ -1,0 +1,26 @@
+width = 420
+height = 190
+
+border-width = 2
+outline-width = 2
+corner-radius = 18
+
+num-results = 6
+
+font = CaskaydiaMono Nerd Font
+font-size = 16
+
+background-color = #2E3440
+border-color = #4C566A
+outline-color = #88C0D0
+
+text-color = #ECEFF4
+input-color = #88C0D0
+
+selection-color = #5E81AC
+#selection-text-color = #ECEFF4
+
+prompt-text = " "
+
+# Specify the directories for desktop applications
+drun-paths = /run/current-system/sw/share/applications:/etc/profiles/per-user/$USER/share/applications:~/.nix-profile/share/applications:~/.local/share/applications
