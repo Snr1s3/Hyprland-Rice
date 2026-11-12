@@ -50,5 +50,14 @@
           ./nixos-config-parts/nvidia.nix
         ];
       };
+
+      nixosConfigurations.Bondia2 = mkHost {
+        hostName = "Bondia2";
+        userName = "alba";
+        hostModules = [
+          ./configuration.nix
+          ./hosts/Bondia2-hardware.nix
+        ];
+      };
     };
 }
