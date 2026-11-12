@@ -16,47 +16,36 @@
   };
 
   outputs = inputs@{ nixpkgs, home-manager, ... }:
-    let
-      mkHost = { hostName, userName, videoDriver ? null, hostModules }:
-        nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          specialArgs = { inherit inputs hostName userName videoDriver; };
-
-          modules = hostModules ++ [
-            home-manager.nixosModules.home-manager
-
-            {
-              home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                extraSpecialArgs = { inherit hostName userName; };
-
-                users.${userName} = import ./home.nix;
-                backupFileExtension = "backup";
-              };
-            }
-          ];
-        };
-    in
     {
-      nixosConfigurations.BonDia = mkHost {
-        hostName = "BonDia";
-        userName = "alba";
-        videoDriver = "nvidia";
-        hostModules = [
+      nixosConfigurations.BonDia = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {
+          inherit inputs;
+          hostName = "BonDia";
+          userName = "alba";
+          videoDriver = "nvidia";
+        };
+
+        modules = [
           ./configuration.nix
           ./hardware-configuration.nix
           ./nixos-config-parts/map-disks.nix
           ./nixos-config-parts/nvidia.nix
-        ];
-      };
+          home-manager.nixosModules.home-manager
 
-      nixosConfigurations.Bondia2 = mkHost {
-        hostName = "Bondia2";
-        userName = "alba";
-        hostModules = [
-          ./configuration.nix
-          ./hosts/Bondia2-hardware.nix
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              extraSpecialArgs = {
+                hostName = "BonDia";
+                userName = "alba";
+              };
+
+              users.alba = import ./home.nix;
+              backupFileExtension = "backup";
+            };
+          }
         ];
       };
     };
