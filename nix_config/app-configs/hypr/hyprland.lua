@@ -175,6 +175,7 @@ local mainMod = "SUPER"
 
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal))
 local closeWindowBind = hl.bind(mainMod .. " + C", hl.dsp.window.close())
+hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("bash ~/.config/hypr/logout_menu.sh"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 
@@ -195,7 +196,7 @@ for i = 1, 10 do
 end
 
 hl.bind(mainMod .. " + SHIFT + S",
-    hl.dsp.exec_cmd("bash -c 'mkdir -p \"$HOME/Pictures/Screenshots\" && grim -g \"$(slurp)\" \"$HOME/Pictures/Screenshots/$(date +%Y%m%d-%H%M%S).png\"'"))
+    hl.dsp.exec_cmd("bash /home/alba/.config/hypr/screenshot.sh"))
 
 
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))

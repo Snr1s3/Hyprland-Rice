@@ -16,6 +16,7 @@ Singleton {
   property int batteryLevelRaw: 0
   property string batteryLevel: "0%"
   property string batteryIcon: "󰂎"
+  property string batteryStatus: "Unknown"
   property bool batteryCharging: false
   property bool isLaptop: false
   property string temperature: "0°C"
@@ -97,6 +98,7 @@ Singleton {
 
         root.batteryLevelRaw = level
         root.batteryLevel = level + "%"
+        root.batteryStatus = status
         root.batteryCharging = status === "Charging"
 
         if (root.batteryCharging) root.batteryIcon = ""
