@@ -11,6 +11,8 @@
     stateVersion = "26.05";
   };
 
+  home.sessionPath = [ "${config.home.homeDirectory}/.local/bin" ];
+
   xdg.configFile = {
     "hypr".source = ./app-configs/hypr;
     "quickshell".source = ./app-configs/quickshell;

@@ -27,7 +27,10 @@
     hyprlock
     hyprpaper
     jq
+    ffmpeg
     amberol
+    picard
+    nodejs
     loupe
     quickshell
     showtime

@@ -2,6 +2,7 @@
 
 {
   virtualisation.docker.enable = true;
+  virtualisation.virtualbox.host.enable = true;
 
   services.openssh = {
     enable = true;
