@@ -6,22 +6,19 @@
     docker
     gh
     git
-    unityhub
     vscode
 
     # Terminal / shell / utilities
     fastfetch
     fetch
-    foot
+    kitty
     unzip
     wget
-    python3Packages.deemix
+
     # Hyprland / Wayland / desktop
     elephant
-    flameshot
     grim
     hyprcursor
-    appimage-run
     brightnessctl
     hyprland
     hyprlock
@@ -29,15 +26,12 @@
     jq
     ffmpeg
     amberol
-    picard
-    nodejs
     loupe
     quickshell
     showtime
     slurp
     swappy
     walker
-    waybar
     wl-clipboard
 
     # Desktop / files / storage
@@ -46,12 +40,11 @@
     gvfs
     prismlauncher
     rpi-imager
-    thunar
-    thunar-archive-plugin
-    thunar-volman
+    kdePackages.dolphin
     tumbler
     udiskie
     filezilla
+    pipewire
 
     # Audio / graphics
     mesa-demos
@@ -65,21 +58,10 @@
     # Fonts / cursors
     bibata-cursors
 
-    # Filesystems / EFI
-    efibootmgr
-    ntfs3g
-
     # Authentication / system security
     polkit_gnome
   ];
 
-  programs.thunar = {
-    enable = true;
-    plugins = with pkgs; [
-      thunar-volman
-      thunar-archive-plugin
-    ];
-  };
 
   programs.xfconf.enable = true;
 

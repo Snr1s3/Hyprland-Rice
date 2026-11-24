@@ -1,12 +1,10 @@
-{ config, pkgs, inputs, ... }:
+{ ... }:
 
 {
-  boot.loader.grub = {
+  boot.loader.limine = {
     enable = true;
-    device = "nodev";
     efiSupport = true;
-    useOSProber = true;
-    theme = inputs.nixos-grub-themes.packages.${pkgs.stdenv.hostPlatform.system}.fallout;
+    maxGenerations = 20; # optional, keeps /boot from filling up
   };
 
   boot.loader.efi.canTouchEfiVariables = true;

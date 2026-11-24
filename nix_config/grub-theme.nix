@@ -1,12 +1,8 @@
 {
-  boot.loader.grub = {
+  boot.loader.limine = {
     enable = true;
-    device = "nodev";
     efiSupport = true;
-    useOSProber = true;
-    extraConfig = ''
-      set theme=/boot/grub/themes/fallout-grub-theme/theme.txt
-    '';
+    maxGenerations = 20;
   };
 
   boot.loader.efi.canTouchEfiVariables = true;

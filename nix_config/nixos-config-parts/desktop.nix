@@ -10,26 +10,20 @@
   services.xserver = {
     enable = true;
     videoDrivers = pkgs.lib.optional (videoDriver != null) videoDriver;
-    displayManager.sessionCommands = ''
-      ${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1 &
-    '';
-
     xkb = {
       layout = "us";
       variant = "";
     };
   };
 
-  services.displayManager.gdm = {
-    enable = true;
-  };
+  environment.systemPackages = [ pkgs.sddm-sugar-dark ];
+
+  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
+  services.displayManager.sddm.theme = "sugar-dark";
 
   xdg.portal = {
     enable = true;
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-hyprland
-      pkgs.xdg-desktop-portal-hyprland
-      xdg-desktop-portal-gtk
-    ];
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 }

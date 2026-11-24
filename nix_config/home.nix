@@ -14,12 +14,11 @@
   home.sessionPath = [ "${config.home.homeDirectory}/.local/bin" ];
 
   xdg.configFile = {
-    "hypr".source = ./app-configs/hypr;
-    "quickshell".source = ./app-configs/quickshell;
-    "foot".source = ./app-configs/foot;
-    "tofi".source = ./app-configs/tofi;
-    "walker".source = ./app-configs/walker;
     "fastfetch".source = ./app-configs/fastfetch;
+    "hypr".source = ./app-configs/hypr;
+    "kitty".source = ./app-configs/kitty;
+    "quickshell".source = ./app-configs/quickshell;
+    "walker".source = ./app-configs/walker;
   };
 
   # ============================================================================
@@ -62,9 +61,8 @@ dconf.settings = {
 
     shellAliases = {
       bondia = "echo Bon Dia Alba";
-      rebuild = "sudo nixos-rebuild switch --flake /etc/nixos#${hostName}";
-      edit_config = "sudo nano /etc/nixos/configuration.nix";
       scan_apps = "update-desktop-database ~/.local/share/applications";
+      rice-rebuild="sudo nixos-rebuild switch --flake /home/alba/github/Hyprland-Rice/nix_config#BonDia";
     };
 
     initExtra = ''

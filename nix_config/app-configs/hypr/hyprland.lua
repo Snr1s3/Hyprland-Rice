@@ -29,8 +29,8 @@ hl.monitor({
 ---- MY PROGRAMS ----
 ---------------------
 
-local terminal    = "foot"
-local fileManager = "thunar"
+local terminal    = "kitty"
+local fileManager = "dolphin"
 local menu        = "elephant & walker"
 local lock        = "hyprlock"
 
