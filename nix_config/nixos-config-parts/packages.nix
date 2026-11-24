@@ -33,6 +33,7 @@
     swappy
     walker
     wl-clipboard
+    btop
 
     # Desktop / files / storage
     desktop-file-utils
@@ -50,6 +51,7 @@
     mesa-demos
     pavucontrol
     playerctl
+    qt6.qtmultimedia
 
     # Browsers / communication
     discord

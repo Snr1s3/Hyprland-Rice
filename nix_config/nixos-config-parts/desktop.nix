@@ -16,11 +16,14 @@
     };
   };
 
-  environment.systemPackages = [ pkgs.sddm-sugar-dark ];
+  environment.systemPackages = [ pkgs.sddm-astronaut ];
 
-  services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
-  services.displayManager.sddm.theme = "sugar-dark";
+  services.displayManager.sddm = {
+    enable = true;
+    theme = "sddm-astronaut-theme";
+    wayland.enable = true;
+    extraPackages = [ pkgs.sddm-astronaut ];
+  };
 
   xdg.portal = {
     enable = true;

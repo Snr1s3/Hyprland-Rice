@@ -7,7 +7,6 @@
     extraGroups = [
       "networkmanager"
       "docker"
-      "vboxusers"
       "wheel"
     ];
   };

@@ -31,7 +31,7 @@ hl.monitor({
 
 local terminal    = "kitty"
 local fileManager = "dolphin"
-local menu        = "elephant & walker"
+local menu        = "walker"
 local lock        = "hyprlock"
 
 -------------------
